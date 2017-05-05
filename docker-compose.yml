@@ -1,0 +1,14 @@
+version: "2"
+
+volumes:
+  data-jenkins:
+
+services:
+  jenkins:
+    build: ./dockerfiles/jenkins
+    ports:
+      - 8080:8080
+      - 50000:50000
+    restart: "always"
+    volumes:
+      - "data-jenkins:/var/jenkins_home"
